@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +14,7 @@ namespace TheComputer
     {
         static void Main(string[] args)
         {
-            const int randMovieCount = 10000;
+            const int randMovieCount = 100;
             /*Lists*/
             string[] rawRandomNumberlist;
             List<string> randomAtomsphereNumbers = new List<string>();
@@ -74,8 +74,24 @@ namespace TheComputer
             {
                 Console.WriteLine("Movie " + movie.GetMovieName() + " had a total of " + movie.GetMovieCount() + " random hits.");
             }
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadLine();
+
+            /*Find the winner and print it*/
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("The following movie has won: " + movies.Last().GetMovieName() + " with a total of " + movies.Last().GetMovieCount().ToString() + " votes.");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            /*Require typed command for exit*/
+            bool exit = false;
+            do
+            {
+                Console.WriteLine("Type 'EXIT' to close.");
+                if(Console.ReadLine() == "EXIT")
+                {
+                    exit = true;
+                }
+            } while (exit != true);
         }
     }
     public class Movie
