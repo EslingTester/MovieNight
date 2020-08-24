@@ -14,7 +14,7 @@ namespace TheComputer
     {
         static void Main(string[] args)
         {
-            const int randMovieCount = 100;
+            const int randMovieCount = 10000;
             /*Lists*/
             string[] rawRandomNumberlist;
             List<string> randomAtomsphereNumbers = new List<string>();
